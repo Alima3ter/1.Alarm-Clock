@@ -34,6 +34,10 @@ h1 {
   width: 100%;
   justify-content: space-between;
 }
+.container .content.disable{
+    opacity: .5;
+    pointer-events: none;
+}
 .content .Controls {
   border: 1px solid #333;
   width: calc(100% / 2 - 5px);
@@ -46,16 +50,19 @@ h1 {
     border: 0;
     width: 100%;
     font-size: 1rem;
+    background: #f4f4f4;
 }
 .container button{
     width: 100%;
     outline: 0;
     border: 0;
+    padding: 5px 0;
     border-radius: 5px;
     background: #444;
     color: #fff;
     margin-top: 1rem;
     font-size: 1rem;
+    cursor: pointer;
 }
 button:hover{
     background: #333;
