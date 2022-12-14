@@ -2,6 +2,7 @@ const selectMenu = document.querySelectorAll("select");
 const timeBox = document.querySelector(".time");
 const setAlarmBtn = document.querySelector("button");
 const content = document.querySelector(".content");
+const image = document.querySelector(".image");
 
 let alarmTime,
   alarmState = " noset";
@@ -11,7 +12,6 @@ for (let i = 23; i >= 0; i--) {
   i = i < 10 ? "0" + i : i;
   let option = ` <option value = "${i}">${i}</option>`;
   selectMenu[0].firstElementChild.insertAdjacentHTML("afterend", option);
-  console.log(option);
 }
 for (let i = 59; i >= 0; i--) {
   i = i < 10 ? "0" + i : i;
@@ -32,6 +32,7 @@ setInterval(() => {
   if (alarmTime == `${h}:${m}`) {
     ring.play();
     ring.loop = true;
+    image.classList.add("img-vib");
   }
 });
 
@@ -53,5 +54,6 @@ function checkState(state) {
     ring.pause();
     alarmState = "noset";
     setAlarmBtn.innerText = "Set Alarm";
+    image.classList.remove("img-vib");
   }
 }
